@@ -1,0 +1,113 @@
+body {
+    background: #e0e0e0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;  
+    margin: 0;
+    background: linear-gradient(45deg, #f3e7e9, #e3eeff, #f3e7e9);
+    background-size: 600% 600%;
+    animation: gradient 12s ease infinite;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    height: 80vh;  
+    overflow: auto;  
+}
+
+#nameSearch {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 0px;
+}
+
+#tickerSearch {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 0px;
+}
+
+#results {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+#results th, #results td {
+    padding: 8px;
+    text-align: left;
+}
+
+#results th {
+    background-color: #f2f2f2;
+}
+
+#results td {
+    border-top: 1px solid #ddd;
+}
+
+#results tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+    #results thead {
+        display: none;
+    }
+
+    #results tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+
+    #results td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    #results td:last-child {
+        border-bottom: 0;
+    }
+
+    #results td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+#results th, #results td {
+    padding: 4px; /* Adjusted padding */
+    text-align: left;
+}
+
+#results td a {
+    color: #aa00ffa1;  /* Forest Green */
+    text-decoration: none;
+}
+
+#results td a:hover {
+    text-decoration: underline;
+}
